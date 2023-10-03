@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener and Expander</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #f5f5f5; text-align: center;">
+
+    <h1 style="color: #333;">URL Shortener and Expander</h1>
+
+    <form method="POST" style="max-width: 400px; margin: 0 auto; padding: 20px; background-color: #fff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); border-radius: 5px;">
+        <label for="url" style="font-weight: bold; margin-bottom: 5px; color: #333; display: block;">Enter a URL:</label>
+        <input type="url" id="url" name="url" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 3px;">
+        
+        <input type="radio" id="shorten" name="action" value="shorten" required style="margin-right: 10px;">
+        <label for="shorten" style="color: #333;">Shorten URL</label>
+
+        <input type="radio" id="expand" name="action" value="expand" required style="margin-left: 20px;">
+        <label for="expand" style="color: #333;">Expand URL</label>
+
+        <br><br>
+
+        <button type="submit" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 3px; cursor: pointer;">Submit</button>
+    </form>
+
+    {% if result %}
+        <h2 style="margin-top: 20px; color: #333;">Result:</h2>
+        <a href="{{ result }}" target="_blank" style="color: #333; text-decoration: underline; display: block;">{{ result }}</a>
+    {% endif %}
+</body>
+</html>
+
